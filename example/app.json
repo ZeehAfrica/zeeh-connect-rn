@@ -1,10 +1,10 @@
 {
-  "name": "zeeh-connect-rn-example",
-  "displayName": "ZeehConnectRn Example",
+  "name": "@zeeh.africa/connect-rn-example",
+  "displayName": "ConnectRn Example",
   "expo": {
-    "name": "zeeh-connect-rn-example",
-    "slug": "zeeh-connect-rn-example",
-    "description": "Example app for zeeh-connect-rn",
+    "name": "@zeeh.africa/connect-rn-example",
+    "slug": "zeeh-africa-connect-rn-example",
+    "description": "Example app for @zeeh.africa/connect-rn",
     "privacy": "public",
     "version": "1.0.0",
     "platforms": [

@@ -1,3 +1,4 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+export { default as ZeeHConnect } from './ZeeHConnect';
+export { default as useZeehConnect } from './useZeeHConnect';
+export { default as ZeehProvider } from './ZeeHProvider';
+export { default as ZeeHConnectButton } from './ZeeHButton';
