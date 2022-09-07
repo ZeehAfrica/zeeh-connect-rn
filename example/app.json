@@ -1,0 +1,23 @@
+{
+  "name": "zeeh-connect-rn-example",
+  "displayName": "ZeehConnectRn Example",
+  "expo": {
+    "name": "zeeh-connect-rn-example",
+    "slug": "zeeh-connect-rn-example",
+    "description": "Example app for zeeh-connect-rn",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
