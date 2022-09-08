@@ -4,11 +4,11 @@ React Native SDK for implementing ZeeH widget - It is a quick and secure way to 
 
 ## Documentation
 
-For complete information about ZeeH Connect, head to the [docs]('https://zeehdocs.zeeh.africa').
+For complete information about ZeeH Connect, head to the [docs](https://zeehdocs.zeeh.africa).
 
 ## Getting Started
 
-Checkout our [get started guide]('https://zeehdocs.zeeh.africa/guides/getting-started') to create your developer account and retrieve your Client Token, API Keys, and Private Keys.
+Checkout our [get started guide](https://zeehdocs.zeeh.africa/guides/getting-started) to create your developer account and retrieve your Client Token, API Keys, and Private Keys.
 
 ## Installation
 
@@ -209,7 +209,7 @@ The data JSON returned from the onSuccess callback.
     accountNumber: '1010101010'
     type:'classic savings'
     balance: 5000
-    userReference: 'recommended(your client userId)'
+    userReference: 'random string'
     bvn: 2222
 }
 ```
@@ -283,7 +283,7 @@ const config = {
   onClose: () => console.log('widget closed'),
   onError: () => console.log('There was an error when loading the widget'),
   onClose: () => console.log('widget loaded'),
-  userReference: 'random_string',
+  userReference: 'recommended(your client userId)',
 };
 ```
 
