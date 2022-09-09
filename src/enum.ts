@@ -3,9 +3,6 @@ export enum WebViewType {
   WIDGET_CLOSED = 'WIDGET_CLOSED',
   ACCOUNT_LINKED = 'ACCOUNT_LINKED',
   ACCOUNT_LINKED_SUCCESS = 'ACCOUNT_LINKED_SUCCESS',
+  INSTITUTION_SELECTED = 'INSTITUTION_SELECTED',
+  WIDGET_LOAD_ERROR = 'WIDGET_LOAD_ERROR',
 }
-
-export type WebviewMessage = {
-  event: WebViewType;
-  data: any;
-};
