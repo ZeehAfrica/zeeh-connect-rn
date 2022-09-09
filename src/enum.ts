@@ -6,6 +6,6 @@ export enum WebViewType {
 }
 
 export type WebviewMessage = {
-  type: WebViewType;
+  event: WebViewType;
   data: any;
 };

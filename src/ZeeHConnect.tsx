@@ -29,15 +29,15 @@ const ZeeHConnect = ({
   const { setOpenWidget } = rest;
 
   const handleMessage = (message: string) => {
-    const responseMessage: WebviewMessage = JSON.parse(message);
+    const parsedMessage: WebviewMessage = JSON.parse(message);
 
-    switch (responseMessage.type) {
+    switch (parsedMessage.event) {
       case WebViewType.WIDGET_CLOSED:
         setOpenWidget(false);
         break;
 
       case WebViewType.ACCOUNT_LINKED_SUCCESS:
-        onSuccess({ data: responseMessage.data });
+        onSuccess({ data: parsedMessage.data });
     }
   };
 
