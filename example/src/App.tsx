@@ -28,8 +28,15 @@ export default function App() {
       console.log('successful');
       console.log(data);
     },
+    onWidgetError: (data: any) => {
+      console.log('encountered error on the widget');
+      console.log(data);
+    },
+    onLoad: () => {
+      console.log('loaded');
+    },
     userReference: 'a unique Id to identify your client',
-    publickey: 'pk_e78eiwuewe...',
+    publickey: 'Ayo',
   };
 
   return (
