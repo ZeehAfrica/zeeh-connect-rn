@@ -1,7 +1,7 @@
-import React from 'react';
-import type { ZeeHConnectProps } from './type.';
-import { createContext, useState } from 'react';
-import ZeeHConnect from './ZeeHConnect';
+import React from "react";
+import type { ZeeHConnectProps } from "./type";
+import { createContext, useState } from "react";
+import ZeeHConnect from "./ZeeHConnect";
 
 export type ZeeHContextType = {
   init: () => void;
@@ -12,7 +12,7 @@ export const ZeeHContext = createContext<ZeeHContextType>({
 });
 
 const ZeeHProvider = (
-  props: Omit<ZeeHConnectProps, 'openWidget' | 'setOpenWidget'>
+  props: Omit<ZeeHConnectProps, "openWidget" | "setOpenWidget">
 ) => {
   const [openWidget, setOpenWidget] = useState<boolean>(false);
 

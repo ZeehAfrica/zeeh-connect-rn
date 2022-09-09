@@ -38,13 +38,13 @@ export default function App() {
   const { init } = useZeehConnect();
 
   const config = {
-    onError: (err: WebViewError) => {
-      //if there is any error loading the widget
-      console.log(err.title);
-    },
     onClose: () => {
       //if the widget is close
       console.log('modal close');
+    },
+    onWidgetError: (data: any) => {
+      console.log('encountered error when loading widget');
+      console.log(data);
     },
     onSuccess: (data: any) => {
       //if the connect is successful
@@ -52,7 +52,7 @@ export default function App() {
       console.log(data);
     },
     userReference: 'a unique Id to identify your client, might be your',
-    publickey: 'pk_e78eiwuewe...', //This can be get on your ZeeH Dashboard
+    publickey: 'pk_e78eiwuewe...', //Access your dashboard to get this
   };
 
   return (
@@ -106,13 +106,13 @@ import { useZeehConnect, ZeehProvider } from 'zeeh-connect-rn';
 
 export default function App() {
   const config = {
-    onError: (err: WebViewError) => {
-      //if there is any error loading the widget
-      console.log(err.title);
-    },
     onClose: () => {
       //if the widget is close
       console.log('modal close');
+    },
+    onWidgetError: (data: any) => {
+      console.log('encountered error when loading widget');
+      console.log(data);
     },
     onSuccess: (data: any) => {
       //if the connect is successful
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
 - [`publicKey`](#publicKey)
 - [`onSuccess`](#onSuccess)
 - [`onClose`](#onClose)
-- [`onError`](#onError)
+- [`onWidgetError`](#onWidgetError)
 - [`onLoad`](#onLoad)
 - [`userReference`](#userReference)
 
@@ -199,18 +199,21 @@ The data JSON returned from the onSuccess callback.
 
 ```js
 {
+  message:"linking successful",
+  timeStamps:"",
+  institution:{
     _id: 'uuid string',
     institution: {
       name: 'FCMB'
       bankCode:'214'
-      type: 'Savings',
+      type: 'classic savings',
     },
     name: 'jon doe'
     accountNumber: '1010101010'
-    type:'classic savings'
     balance: 5000
     userReference: 'random string'
     bvn: 2222
+      }
 }
 ```
 
@@ -230,9 +233,9 @@ const config = {
 };
 ```
 
-### <a id="onError"></a> `onError`
+### <a id="onWidgetError"></a> `onWidgetError`
 
-#### (err: WebViewError) => { Void }: Optional
+#### (data) => { Void }: Optional
 
 The optional closure is called if errors were encountered when loading the widget. passing a wrong publicKey or wrong params can cause this error.
 
@@ -243,7 +246,8 @@ const config = {
     console.log(data);
   },
   onClose: () => console.log('widget closed'),
-  onError: () => console.log('There was an error when loading the widget'),
+  onWidgetError: (data) =>
+    console.log('There was an error when loading the widget'),
 };
 ```
 
@@ -260,7 +264,8 @@ const config = {
     console.log(data);
   },
   onClose: () => console.log('widget closed'),
-  onError: () => console.log('There was an error when loading the widget'),
+  onWidgetError: data) =>
+    console.log('There was an error when loading the widget'),
   onClose: () => console.log('widget loaded'),
 };
 ```
@@ -281,7 +286,8 @@ const config = {
     console.log(data);
   },
   onClose: () => console.log('widget closed'),
-  onError: () => console.log('There was an error when loading the widget'),
+  onWidgetError: (data) =>
+    console.log('There was an error when loading the widget'),
   onClose: () => console.log('widget loaded'),
   userReference: 'recommended(your client userId)',
 };

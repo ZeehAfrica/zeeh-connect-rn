@@ -7,12 +7,14 @@ import {
   View,
 } from 'react-native';
 import WebView from 'react-native-webview';
+
 import type {
   WebViewErrorEvent,
   WebViewMessageEvent,
 } from 'react-native-webview/lib/WebViewTypes';
-import { WebviewMessage, WebViewType } from './enum';
-import type { ZeeHConnectProps } from './type.';
+import { WebViewType } from './enum';
+
+import type { WebviewMessage, ZeeHConnectProps } from './type';
 
 const RenderLoadingView = () => (
   <View style={styles.overlay}>
@@ -34,23 +36,31 @@ const ZeeHConnect = ({
     switch (parsedMessage.event) {
       case WebViewType.WIDGET_CLOSED:
         setOpenWidget(false);
+        rest.onClose();
         break;
 
       case WebViewType.ACCOUNT_LINKED_SUCCESS:
-        onSuccess({ data: parsedMessage.data });
+        onSuccess(parsedMessage.data);
+        break;
+
+      case WebViewType.WIDGET_LOAD_ERROR:
+        setOpenWidget(false);
+        rest.onWidgetError && rest.onWidgetError(parsedMessage.data);
+        break;
     }
   };
 
   const handleWebViewFailure = (error: WebViewErrorEvent['nativeEvent']) => {
+    console.log(error);
     if (rest.onError) {
       setOpenWidget(false);
-      return rest.onError(error);
+      rest.onError(error);
     }
   };
 
   const handleWidgetLoaded = () => {
     if (rest.onLoad) {
-      return rest.onLoad();
+      rest.onLoad();
     }
   };
 
@@ -85,7 +95,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0,0,0,0.9)',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
   },
