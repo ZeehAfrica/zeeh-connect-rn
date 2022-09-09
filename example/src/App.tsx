@@ -47,7 +47,6 @@ export default function App() {
         <ZeeHConnectButton
           ButtonWrapperStyle={styles.pressable}
           TextStyles={styles.pressableText}
-          text="Testing This"
         />
       </View>
     </ZeehProvider>
@@ -76,5 +75,6 @@ const styles = StyleSheet.create({
   pressableText: {
     color: 'white',
     fontSize: 16,
+    textAlign: 'center',
   },
 });

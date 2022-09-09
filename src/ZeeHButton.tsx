@@ -25,7 +25,7 @@ const ZeehConnectButton = ({
 
   return (
     <Pressable style={ButtonWrapperStyle} onPress={() => init()} {...rest}>
-      <Text style={TextStyles}>{text ? 'Authenticate with ZeeH' : text}</Text>
+      <Text style={TextStyles}>{text ? text : 'Authenticate with ZeeH'}</Text>
     </Pressable>
   );
 };

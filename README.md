@@ -275,9 +275,7 @@ const config = {
 #### String: Optional
 
 A unique string that should be passed to the connect widget. This will act like an Id of your user that is with Us. you can get account details passing userReference as a params.
-It will be generated automatically if not passed but it recommended to always pass it. It can be your client Id.
-
-When passing a userReference to the configuration it will be passed back on all onEvent calls.
+It will be generated automatically if not passed, but it's recommended to always pass it. It could be your client Id.
 
 ```js
 const config = {
