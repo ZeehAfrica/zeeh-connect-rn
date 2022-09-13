@@ -51,7 +51,6 @@ const ZeeHConnect = ({
   };
 
   const handleWebViewFailure = (error: WebViewErrorEvent['nativeEvent']) => {
-    console.log(error);
     if (rest.onError) {
       setOpenWidget(false);
       rest.onError(error);

@@ -36,7 +36,7 @@ export default function App() {
       console.log('loaded');
     },
     userReference: 'a unique Id to identify your client',
-    publickey: 'Ayo',
+    publickey: 'pk_VH05d6NcDYUnL0yTT8j1tkBBX',
   };
 
   return (

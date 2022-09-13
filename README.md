@@ -213,7 +213,7 @@ The data JSON returned from the onSuccess callback.
     balance: 5000
     userReference: 'random string'
     bvn: 2222
-      }
+  }
 }
 ```
 
